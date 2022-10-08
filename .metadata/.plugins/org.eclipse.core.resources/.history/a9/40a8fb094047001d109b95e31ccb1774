@@ -1,0 +1,33 @@
+package com.syuan;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.context.annotation.Bean;
+
+import com.syuan.servlet.HelloServlet;
+
+/**
+ * SpringBoot的啟動器
+ * @author syuan
+ *
+ */
+@SpringBootApplication
+//讓SpringBoot掃描Servlet相關註解
+//@ServletComponentScan 
+public class Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+	
+	//註冊Servlet
+	@Bean //在方法執行完後, 會把回傳的物件作為一個Bean, 放在Spring容器裡面
+	public ServletRegistrationBean getServletRegistrationBean() {
+		ServletRegistrationBean bean = new ServletRegistrationBean(new HelloServlet());
+		//設置訪問路徑
+		bean.addUrlMappings("/helloServletBean");
+	}
+	
+}
