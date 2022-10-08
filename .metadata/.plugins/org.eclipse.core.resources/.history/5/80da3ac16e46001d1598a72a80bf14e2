@@ -1,0 +1,5 @@
+package com.syuan.controller;
+
+public class HelloController {
+
+}
