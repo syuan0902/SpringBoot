@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Upload</title>
+</head>
+<body>
+	文件上傳
+	<hr />
+	<form action="uploadFile" method="post" enctype="multipart/form-data">
+		請選擇文件<input type="file" name="attach" /> 
+		<input type="submit" value="開始上傳" />
+	</form>
+</body>
+</html>

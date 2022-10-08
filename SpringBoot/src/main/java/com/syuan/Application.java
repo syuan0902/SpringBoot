@@ -17,7 +17,7 @@ import com.syuan.servlet.HelloServlet;
  * @author syuan
  *
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.syuan.controller")
 //讓SpringBoot掃描Servlet相關註解
 //@ServletComponentScan 
 public class Application {
@@ -25,7 +25,7 @@ public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
-	
+	/*
 	//將Servlet註冊為bean, 在方法執行完後會把回傳的物件作為一個Bean, 放在Spring容器裡面
 	@Bean //
 	public ServletRegistrationBean<HelloServlet> getServletRegistrationBean() {
@@ -54,5 +54,5 @@ public class Application {
 			= new ServletListenerRegistrationBean<HelloListener>(new HelloListener());
 		return listenerBean;
 	}
-	
+	*/
 }
