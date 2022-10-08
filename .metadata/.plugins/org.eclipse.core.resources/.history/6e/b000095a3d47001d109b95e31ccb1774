@@ -1,0 +1,7 @@
+package com.syuan.servlet;
+
+import javax.servlet.ServletContextListener;
+
+public class HelloListener implements ServletContextListener {
+
+}

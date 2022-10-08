@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 //@Controller
-@RestController
+@RestController //@RestController = @Controller + @ResponseBody
 public class HelloController2 {
 	
 	private Map<String, Object> result = new HashMap<String, Object>();
