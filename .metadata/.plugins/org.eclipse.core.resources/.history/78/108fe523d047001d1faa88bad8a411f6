@@ -1,0 +1,5 @@
+package com.syuan.model;
+
+public class User {
+
+}

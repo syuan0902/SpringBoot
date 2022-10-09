@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>首頁</title>
+</head>
+<body>
+	我是首頁
+	<hr />
+	<img th:src="${filePath}" />
+	<form action="uploadFile" method="post" enctype="multipart/form-data">
+		請選擇文件<input type="file" name="attach" /><br>
+		<br> <input type="submit" value="開始上傳" />
+	</form>
+</body>
+</html>
