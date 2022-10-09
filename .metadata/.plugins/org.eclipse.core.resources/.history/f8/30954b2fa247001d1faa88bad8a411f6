@@ -1,0 +1,25 @@
+spring.http.multipart.maxFileSize=100MB
+spring.http.multipart.maxRequestSize=200MB
+
+##########配置Thymeleaf####################
+spring.thymeleaf.mode=html
+spring.thymeleaf.encoding=UTF-8
+spring.thymeleaf.cache=false
+
+##########配置SpringMVC視圖####################
+spring.mvc.view.prefix=/
+spring.mvc.view.suffix=.html
+
+##########配置JPA####################
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.SQLServer2016Dialect
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+####直接建table, 測試用, 上班勿用
+spring.jpa.hibernate.ddl-auto=update 
+spring.jpa.hibernate.naming.physical-stratehy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+##########配置連線資訊####################
+spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+spring.datasource.url=jdbc:sqlserver://localhost:1433;databaseName=SpringBootDB
+spring.datasource.username=sa
+spring.datasource.password=P@ssw0rd
