@@ -1,0 +1,88 @@
+package com.syuan;
+
+import org.apache.coyote.http11.AbstractHttp11Protocol;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.embedded.tomcat.TomcatConnectorCustomizer;
+
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+
+import com.syuan.servlet.HelloFilter;
+import com.syuan.servlet.HelloListener;
+import com.syuan.servlet.HelloServlet;
+
+/**
+ * SpringBoot的啟動器
+ * @author syuan
+ *
+ */
+@SpringBootApplication(scanBasePackages = "com.syuan.controller")
+//讓SpringBoot掃描Servlet相關註解
+//@ServletComponentScan 
+public class Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+	
+
+    //Tomcat large file upload connection reset
+
+//    @Bean
+//    public TomcatEmbeddedServletContainerFactory tomcatEmbedded() {
+//
+//        TomcatEmbeddedServletContainerFactory tomcat = new TomcatEmbeddedServletContainerFactory();
+//
+//        tomcat.addConnectorCustomizers((TomcatConnectorCustomizer) connector -> {
+//            if ((connector.getProtocolHandler() instanceof AbstractHttp11Protocol<?>)) {
+//                //-1 means unlimited
+//                ((AbstractHttp11Protocol<?>) connector.getProtocolHandler()).setMaxSwallowSize(-1);
+//            }
+//        });
+//
+//        return tomcat;
+//
+//    }
+
+	
+	//將CommonsMultipartResolver註冊為bean, 處理文件上傳
+//	public CommonsMultipartResolver getCommonsMultipartResolver() {
+//		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+//		return multipartResolver;
+//	}
+	/*
+	//將Servlet註冊為bean, 在方法執行完後會把回傳的物件作為一個Bean, 放在Spring容器裡面
+	@Bean //
+	public ServletRegistrationBean<HelloServlet> getServletRegistrationBean() {
+		ServletRegistrationBean<HelloServlet> servletBean 
+			= new ServletRegistrationBean<HelloServlet>(new HelloServlet());
+		//設置訪問路徑
+		servletBean.addUrlMappings("/helloServletBean");
+		return servletBean;
+		
+	}
+	
+	//將Filter註冊為bean
+	@Bean
+	public FilterRegistrationBean<HelloFilter> getFilterRegistrationBean(){
+		FilterRegistrationBean<HelloFilter> filterBean 
+			= new FilterRegistrationBean<HelloFilter>(new HelloFilter());
+		filterBean.addUrlPatterns("/helloServletBean");
+		return filterBean;
+	
+	}
+	
+	//將Listener註冊為bean
+	@Bean
+	public ServletListenerRegistrationBean<HelloListener> getServletListenerRegistrationBean() {
+		ServletListenerRegistrationBean<HelloListener> listenerBean 
+			= new ServletListenerRegistrationBean<HelloListener>(new HelloListener());
+		return listenerBean;
+	}
+	*/
+}

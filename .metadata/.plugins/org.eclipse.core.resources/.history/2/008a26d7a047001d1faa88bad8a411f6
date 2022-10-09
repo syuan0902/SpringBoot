@@ -1,0 +1,9 @@
+package com.syuan.model;
+
+public class GoodPhoto {
+
+	public GoodPhoto() {
+	}
+	
+
+}
