@@ -1,0 +1,14 @@
+spring.http.multipart.maxFileSize=100MB
+spring.http.multipart.maxRequestSize=200MB
+
+user.file.path="E:\images"
+user.file.name="myImg01.jpg"
+
+##########配置Thymeleaf####################
+spring.thymeleaf.mode=html
+spring.thymeleaf.encoding=UTF-8
+spring.thymeleaf.cache=false
+
+##########配置SpringMVC視圖####################
+spring.mvc.view.prefix=/
+spring.mvc.view.suffix=.html

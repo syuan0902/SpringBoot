@@ -1,12 +1,16 @@
 package com.syuan;
 
+import org.apache.coyote.http11.AbstractHttp11Protocol;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.embedded.tomcat.TomcatConnectorCustomizer;
+
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.syuan.servlet.HelloFilter;
 import com.syuan.servlet.HelloListener;
@@ -25,6 +29,7 @@ public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
+
 	/*
 	//將Servlet註冊為bean, 在方法執行完後會把回傳的物件作為一個Bean, 放在Spring容器裡面
 	@Bean //
