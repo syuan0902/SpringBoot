@@ -26,11 +26,13 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
-		<!-- 引入thymeleaf模板 -->
+		<!-- 引入頁面模板 
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
+	-->
 		<!-- 快速重啟專案的擴充 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

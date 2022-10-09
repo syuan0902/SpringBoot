@@ -1,27 +1,41 @@
 package com.syuan.model;
 
-import java.io.Serializable;
-
-public class User implements Serializable{
-
-	private static final long serialVersionUID = 1L;
+public class User {
+	private Integer id;
+	private String name;
+	private Integer age;
 	
-	private String userName;
-	private String userPwd;
-	public String getUserName() {
-		return userName;
+	public User() {
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	public String getUserPwd() {
-		return userPwd;
-	}
-	public void setUserPwd(String userPwd) {
-		this.userPwd = userPwd;
-	}
-	
-	
 
+	public User(Integer id, String name, Integer age) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
 	
 }
